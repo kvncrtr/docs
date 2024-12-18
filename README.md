@@ -24,7 +24,11 @@ Here’s how you can use a Markdown documentation repo effectively:
 
 ### **2. Ideas for Daily Updates**
 Here are ways to generate meaningful daily contributions:
-   - **Daily Logs:** Write about what you learned, challenges you faced, or tools you explored that day.
+#### Start of Day
+   - **Daily Logs:** Plan for the work ahead of you.
+   - **Daily Standup:** Adopt the agile methodology to focus on delivering value through incremental progress.
+#### End of Day
+   - **Daily Bread:** Write about what you learned.
    - **Technical Summaries:** Summarize topics like "Git basics," "HTTP protocols," or "Python dictionaries."
    - **Project Notes:** Document work on other coding projects, such as architecture, troubleshooting, or improvements.
    - **Code Snippets:** Add small scripts or commands (in Markdown's code blocks) with explanations.
