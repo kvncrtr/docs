@@ -5,7 +5,7 @@ Here’s how you can use a Markdown documentation repo effectively:
 ### **1. Create a Documentation-Focused Repository**
    - **Purpose:** The repository can be a collection of your notes, learnings, tutorials, or technical documentation.
    - **Structure:** Organize the repository with folders and files:
-   
+
      ```
      /docs
          ├── README.md
@@ -112,3 +112,148 @@ Example daily log template:
 ### 5. **Ethical Considerations**
    - It's important to avoid fake contributions. Genuine activity is better for long-term skill development and credibility.
    - If you're using scheduling or automation, ensure the contributions reflect meaningful work, even if spread out for appearance.
+
+
+## **Headers**
+```markdown
+# Header 1
+## Header 2
+### Header 3
+#### Header 4
+##### Header 5
+###### Header 6
+```
+# Header 1  
+## Header 2  
+### Header 3  
+
+---
+
+## **Text Formatting**
+```markdown
+*Italic* or _Italic_  
+**Bold** or __Bold__  
+***Bold and Italic***  
+~~Strikethrough~~  
+```
+*Italic*  
+**Bold**  
+***Bold and Italic***  
+~~Strikethrough~~  
+
+---
+
+## **Lists**
+
+### Unordered List:
+```markdown
+- Item 1
+- Item 2
+  - Subitem 2.1
+  - Subitem 2.2
+* Item 3
+```
+- Item 1  
+- Item 2  
+  - Subitem 2.1  
+  - Subitem 2.2  
+* Item 3  
+
+### Ordered List:
+```markdown
+1. Item 1
+2. Item 2
+   1. Subitem 2.1
+   2. Subitem 2.2
+3. Item 3
+```
+1. Item 1  
+2. Item 2  
+   1. Subitem 2.1  
+   2. Subitem 2.2  
+3. Item 3  
+
+---
+
+## **Links and Images**
+
+### Link:
+```markdown
+[Link Text](https://example.com)
+```
+[Link Text](https://example.com)  
+
+### Image:
+```markdown
+![Alt Text](https://example.com/image.jpg)
+```
+![Alt Text](https://example.com/image.jpg)  
+
+---
+
+## **Blockquotes**
+```markdown
+> This is a blockquote.
+>> Nested blockquote.
+```
+> This is a blockquote.  
+>> Nested blockquote.  
+
+---
+
+## **Code**
+
+### Inline Code:
+```markdown
+`inline code`
+```
+`inline code`
+
+### Code Block:
+<pre>
+```language
+Code here
+```
+</pre>
+
+Example:  
+```python
+print("Hello, World!")
+```
+
+---
+
+## **Horizontal Rule**
+```markdown
+---
+***
+___
+```
+---
+
+---
+
+## **Tables**
+```markdown
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| Data 1   | Data 2   | Data 3   |
+| Data 4   | Data 5   | Data 6   |
+```
+
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| Data 1   | Data 2   | Data 3   |
+| Data 4   | Data 5   | Data 6   |
+
+---
+
+## **Tasks**
+```markdown
+- [ ] Task 1
+- [x] Task 2 (completed)
+```
+- [ ] Task 1  
+- [x] Task 2 (completed)  
+
+---
