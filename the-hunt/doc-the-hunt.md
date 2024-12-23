@@ -3,7 +3,9 @@
 1. Find a company that has an open Junior, Entry Level, or Intern Role
 
 2. Find the people that work at that company find the hiring manager add them to the hitlist, follow them on twitter, find their email(hunter.io), ask for a coffee chat, send a thank you message, get the recommendation.
+
     - Message Templates to use (./the-hunt/message-templates)
+
 3. network with them into an interview.
 
 4. if you cant find the hiring manager, then you find the engineer, recruiter, or anyone that works there.
