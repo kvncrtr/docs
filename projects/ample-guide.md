@@ -22,7 +22,7 @@ DevOps: Kubernetes (container orchestration), Docker (containerisation), ELK Sta
 
 -use [https://phosphoricons.com/](https://phosphoricons.com/?q=%22search%22) for all icons in the application.
 
--aspect ratio css rule. Used to keep a certain aspect of a div. 
+-aspect ratio css rule. Used to keep a certain aspect of a div.
 
 -schema for a blog post
 [Blog Post Schema](https://schema.org/Blog)
@@ -155,20 +155,20 @@ CREATE TABLE IF NOT EXISTS Aggregated_Ratings (
 	FOREIGN KEY (blog_posts_id) REFERENCES Blog_Posts(id) ON DELETE SET NULL
 );
 
-    
+
 CREATE TABLE IF NOT EXISTS Citations (
     id INT PRIMARY KEY,
-	  author VARCHAR(100) NOT NULL,   
-    blog_post_id INT,                      
-    citation VARCHAR(1000) NOT NULL,                            
-    citation_type VARCHAR(50) NOT NULL,   
+	  author VARCHAR(100) NOT NULL,
+    blog_post_id INT,
+    citation VARCHAR(1000) NOT NULL,
+    citation_type VARCHAR(50) NOT NULL,
 	  comments VARCHAR(1000),
-    date_published DATE NOT NULL,                      
+    date_published DATE NOT NULL,
     headline VARCHAR(500),
-	  license VARCHAR(100) DEFAULT 'Not Found',  
+	  license VARCHAR(100) DEFAULT 'Not Found',
 	  name VARCHAR(100),
-    publisher VARCHAR(100) NOT NULL DEFAULT 'Unpublished',                  
-    url VARCHAR(255) DEFAULT 'Not Published',   
+    publisher VARCHAR(100) NOT NULL DEFAULT 'Unpublished',
+    url VARCHAR(255) DEFAULT 'Not Published',
     FOREIGN KEY (blog_posts_id) REFERENCES Blog_Posts(id)
 );
 
@@ -182,16 +182,16 @@ CREATE TABLE IF NOT EXISTS keywords (
 );
 
 CREATE TABLE IF NOT EXISTS blog_post_keywords (
-    blog_post_id INT,                     
-    keyword_id INT,                           
+    blog_post_id INT,
+    keyword_id INT,
     FOREIGN KEY (blog_post_id) REFERENCES blog_posts(id) ON DELETE CASCADE,
     FOREIGN KEY (keyword_id) REFERENCES keywords(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS comments (
     id INT PRIMARY KEY,
-    blog_post_id INT,                     
-    commenter_name VARCHAR(100) DEFAULT 'Guest', 
+    blog_post_id INT,
+    commenter_name VARCHAR(100) DEFAULT 'Guest',
     comment TEXT NOT NULL,
     date_created DATE DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (blog_post_id) REFERENCES blog_posts(id)
@@ -199,18 +199,18 @@ CREATE TABLE IF NOT EXISTS comments (
 
 CREATE TABLE IF NOT EXISTS Contributors (
     id INT PRIMARY KEY,
-	  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+	  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	  articles_written INT DEFAULT 0,
-    bio TEXT UNIQUE NOT NULL,     
-    email VARCHAR(150) UNIQUE NOT NULL,  
+    bio TEXT UNIQUE NOT NULL,
+    email VARCHAR(150) UNIQUE NOT NULL,
 		is_active BOOLEAN DEFAULT TRUE,
-		last_login TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
-		name VARCHAR(100) NOT NULL,	
+		last_login TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+		name VARCHAR(100) NOT NULL,
 		password VARCHAR(255) UNIQUE NOT NULL,
 		profile_picture_url VARCHAR(255),
 		role VARCHAR(100) NOT NULL DEFAULT 'editor',
-		website_url VARCHAR(255)   
+		website_url VARCHAR(255)
 );
 
 
@@ -382,116 +382,116 @@ CREATE TABLE IF NOT EXISTS potential_actions (
 - Captions and Subtitles: For videos and audio content.
 - Keyboard-Friendly Interactive Elements: To improve usability.
 
--Roles at a Big blog 
+-Roles at a Big blog
 
 Content Creation and Editorial Team
 
 1. Editor-in-Chief
-    - Oversees overall content strategy and editorial direction.
-    - Approves major topics, themes, and angles for stories.
+   - Oversees overall content strategy and editorial direction.
+   - Approves major topics, themes, and angles for stories.
 2. Managing Editor
-    - Manages day-to-day operations of the editorial team.
-    - Assigns stories to writers and ensures deadlines are met.
+   - Manages day-to-day operations of the editorial team.
+   - Assigns stories to writers and ensures deadlines are met.
 3. Senior Editor
-    - Edits articles for quality, tone, and style.
-    - Works with writers to refine complex topics.
+   - Edits articles for quality, tone, and style.
+   - Works with writers to refine complex topics.
 4. Staff Writers/Reporters
-    - Creates original articles, news stories, and features.
-    - Conducts interviews and performs research.
+   - Creates original articles, news stories, and features.
+   - Conducts interviews and performs research.
 5. Contributors/Freelance Writers
-    - Provides articles on a per-assignment or per-topic basis.
-    - Brings unique perspectives or specialized expertise.
+   - Provides articles on a per-assignment or per-topic basis.
+   - Brings unique perspectives or specialized expertise.
 6. Copy Editor
-    - Ensures grammar, punctuation, and spelling accuracy.
-    - Polishes content for readability and adherence to style guides.
+   - Ensures grammar, punctuation, and spelling accuracy.
+   - Polishes content for readability and adherence to style guides.
 7. Content Strategist
-    - Develops strategies for engaging audiences.
-    - Analyzes content performance to guide future topics.
+   - Develops strategies for engaging audiences.
+   - Analyzes content performance to guide future topics.
 8. Fact-Checkers
-    - Verifies the accuracy of information and sources.
-    - Ensures credibility and trustworthiness of the blog.
+   - Verifies the accuracy of information and sources.
+   - Ensures credibility and trustworthiness of the blog.
 9. Multimedia Journalist
-    - Produces video and audio content to supplement articles.
-    - Specializes in visual storytelling.
+   - Produces video and audio content to supplement articles.
+   - Specializes in visual storytelling.
 
 Business and Operations Team
 
 1. Publisher
-    - Oversees the business side of the publication.
-    - Works on advertising, partnerships, and revenue strategies.
+   - Oversees the business side of the publication.
+   - Works on advertising, partnerships, and revenue strategies.
 2. Sales and Advertising Manager
-    - Manages ad placements and sponsorship deals.
-    - Coordinates with advertisers for campaigns.
+   - Manages ad placements and sponsorship deals.
+   - Coordinates with advertisers for campaigns.
 3. Marketing Specialist
-    - Promotes the blog on social media and other platforms.
-    - Designs campaigns to grow readership.
+   - Promotes the blog on social media and other platforms.
+   - Designs campaigns to grow readership.
 4. SEO Specialist
-    - Optimizes content for search engines to improve visibility.
-    - Researches keywords and ensures technical SEO best practices.
+   - Optimizes content for search engines to improve visibility.
+   - Researches keywords and ensures technical SEO best practices.
 5. Audience Engagement Manager
-    - Handles community building on platforms like Twitter, LinkedIn, and Instagram.
-    - Interacts with readers through comments and discussions.
+   - Handles community building on platforms like Twitter, LinkedIn, and Instagram.
+   - Interacts with readers through comments and discussions.
 
 Design and Technical Team
 
 1. Web Developer
-    - Builds and maintains the blog’s website.
-    - Ensures fast performance, scalability, and mobile responsiveness.
+   - Builds and maintains the blog’s website.
+   - Ensures fast performance, scalability, and mobile responsiveness.
 2. UX/UI Designer
-    - Designs an intuitive user interface for readers.
-    - Improves the overall user experience on the site.
+   - Designs an intuitive user interface for readers.
+   - Improves the overall user experience on the site.
 3. Graphic Designer/Illustrator
-    - Creates images, infographics, and other visuals for articles.
-    - Enhances storytelling through compelling designs.
+   - Creates images, infographics, and other visuals for articles.
+   - Enhances storytelling through compelling designs.
 4. Data Analyst
-    - Analyzes website traffic and audience metrics.
-    - Provides insights for content and business strategy.
+   - Analyzes website traffic and audience metrics.
+   - Provides insights for content and business strategy.
 5. Technical Support Specialist
-    - Ensures website uptime and resolves technical issues.
-    - Manages tools, plugins, and integrations.
+   - Ensures website uptime and resolves technical issues.
+   - Manages tools, plugins, and integrations.
 
 Leadership and Strategy Team
 
 1. CEO/Founder
-    - Sets the vision and long-term strategy for the blog.
-    - Often involved in partnerships, acquisitions, or major business decisions.
+   - Sets the vision and long-term strategy for the blog.
+   - Often involved in partnerships, acquisitions, or major business decisions.
 2. Chief Operating Officer (COO)
-    - Manages daily operations and ensures teams align with business goals.
+   - Manages daily operations and ensures teams align with business goals.
 3. Chief Technology Officer (CTO)
-    - Oversees the technology stack and future tech upgrades.
+   - Oversees the technology stack and future tech upgrades.
 4. Chief Marketing Officer (CMO)
-    - Drives audience growth, brand awareness, and partnerships.
+   - Drives audience growth, brand awareness, and partnerships.
 5. Product Manager
-    - Develops and prioritizes features for the blog’s platform.
-    - Coordinates between technical and editorial teams.
+   - Develops and prioritizes features for the blog’s platform.
+   - Coordinates between technical and editorial teams.
 
 Support Roles
 
 1. Event Coordinator
-    - Plans events like webinars, tech meetups, or conferences.
-    - Collaborates with sponsors and the editorial team.
+   - Plans events like webinars, tech meetups, or conferences.
+   - Collaborates with sponsors and the editorial team.
 2. Social Media Manager
-    - Manages and grows social media presence.
-    - Schedules posts and tracks engagement.
+   - Manages and grows social media presence.
+   - Schedules posts and tracks engagement.
 3. Legal Advisor
-    - Ensures content complies with copyright and other legal standards.
-    - Manages contracts and partnerships.
+   - Ensures content complies with copyright and other legal standards.
+   - Manages contracts and partnerships.
 4. Customer Support/Community Moderator
-    - Handles inquiries and resolves user issues.
-    - Moderates comments and community discussions.
+   - Handles inquiries and resolves user issues.
+   - Moderates comments and community discussions.
 
 Roles Specific to TechCrunch
 
 TechCrunch and similar blogs often specialize in technology reporting, so roles may include:
 
 1. Tech Analyst
-    - Covers trends and breakthroughs in technology.
+   - Covers trends and breakthroughs in technology.
 2. Startup Specialist
-    - Reports on startups, funding rounds, and entrepreneurial trends.
+   - Reports on startups, funding rounds, and entrepreneurial trends.
 3. Product Reviewer
-    - Tests and reviews gadgets, apps, and tech products.
+   - Tests and reviews gadgets, apps, and tech products.
 4. Industry Insider
-    - Focuses on corporate developments in big tech (e.g., Google, Microsoft).
+   - Focuses on corporate developments in big tech (e.g., Google, Microsoft).
 
 Would you like further insights into a specific role or how these teams collaborate?
 
@@ -519,7 +519,7 @@ Would you like further insights into a specific role or how these teams collabor
 
 [Add more features to make it attractive to Google](https://www.notion.so/Add-more-features-to-make-it-attractive-to-Google-15ba8a10a70d8076881ce73b64497059?pvs=21)
 
--connecting to a postgresql database 
+-connecting to a postgresql database
 
 [Connecting to a PostgreSQL database with Go's database/sql package - Calhoun.io](https://www.calhoun.io/connecting-to-a-postgresql-database-with-gos-database-sql-package/)
 
@@ -540,92 +540,92 @@ A blog application where users can:
 ### Key Features:
 
 1. **User Authentication**:
-    - **Sign up and login**: Implement user registration and login (using email/password, social logins like Google or GitHub).
-    - **Role-based access**: Allow users to have different roles (Admin/Editor/Viewer) with different permissions (only admins can delete posts, for example).
+   - **Sign up and login**: Implement user registration and login (using email/password, social logins like Google or GitHub).
+   - **Role-based access**: Allow users to have different roles (Admin/Editor/Viewer) with different permissions (only admins can delete posts, for example).
 2. **Blog Post CRUD**:
-    - **Create/Update/Delete Posts**: Admin or authorized users can create, update, and delete blog posts.
-    - **Markdown Support**: Allow users to write blog posts using Markdown for rich-text formatting.
+   - **Create/Update/Delete Posts**: Admin or authorized users can create, update, and delete blog posts.
+   - **Markdown Support**: Allow users to write blog posts using Markdown for rich-text formatting.
 3. **Comment System**:
-    - Users can add comments to blog posts.
-    - Include features like upvoting/downvoting comments or flagging inappropriate comments.
+   - Users can add comments to blog posts.
+   - Include features like upvoting/downvoting comments or flagging inappropriate comments.
 4. **Categories & Tags**:
-    - Implement categories and tags for blog posts.
-    - Enable users to filter or search posts by categories or tags.
+   - Implement categories and tags for blog posts.
+   - Enable users to filter or search posts by categories or tags.
 5. **Search Functionality**:
-    - Full-text search for blog posts by title, content, or tags.
+   - Full-text search for blog posts by title, content, or tags.
 6. **Profile Management**:
-    - Users can update their profile (name, avatar, bio) and view their own posts.
+   - Users can update their profile (name, avatar, bio) and view their own posts.
 7. **Responsive Design**:
-    - Ensure the front-end is mobile-responsive and follows modern UX/UI principles.
+   - Ensure the front-end is mobile-responsive and follows modern UX/UI principles.
 
 ### Technology Stack:
 
 ### **Front-End**:
 
 1. **React.js** or **Vue.js** (for building dynamic, single-page apps).
-    - **React Router** for routing.
-    - **Axios** or **Fetch API** for making HTTP requests to the backend.
-    - **State management**: Use Redux or React's Context API for managing global state (e.g., user authentication status).
-    - **Styling**: Use CSS frameworks like **Tailwind CSS** or **Material-UI** for consistent and responsive design.
-    - **Form Handling**: Libraries like Formik or React Hook Form for handling form submissions (especially for login, registration, and blog posts).
+   - **React Router** for routing.
+   - **Axios** or **Fetch API** for making HTTP requests to the backend.
+   - **State management**: Use Redux or React's Context API for managing global state (e.g., user authentication status).
+   - **Styling**: Use CSS frameworks like **Tailwind CSS** or **Material-UI** for consistent and responsive design.
+   - **Form Handling**: Libraries like Formik or React Hook Form for handling form submissions (especially for login, registration, and blog posts).
 
 ### **Back-End**:
 
 1. **Node.js with Express** or **Python (Flask/Django)**:
-    - Express is a popular lightweight framework for Node.js, while Django provides more out-of-the-box features if you prefer Python.
-    - **RESTful APIs**: Build REST APIs to handle CRUD operations for blog posts, comments, and user management.
-    - **JWT Authentication** for secure user login and session management.
-    - **Authorization middleware** for role-based access control.
+   - Express is a popular lightweight framework for Node.js, while Django provides more out-of-the-box features if you prefer Python.
+   - **RESTful APIs**: Build REST APIs to handle CRUD operations for blog posts, comments, and user management.
+   - **JWT Authentication** for secure user login and session management.
+   - **Authorization middleware** for role-based access control.
 
 ### **Database**:
 
 1. **Relational DB (PostgreSQL/MySQL)** or **NoSQL DB (MongoDB)**:
-    - **PostgreSQL/MySQL**: Use a relational database for structured data like blog posts, users, and comments.
-    - **MongoDB**: If you want to go the NoSQL route, MongoDB is great for storing blog posts and user data in a flexible, schema-less manner.
-    - Implement relationships (e.g., users and their blog posts, posts and their comments) using foreign keys (in relational DB) or references (in MongoDB).
+   - **PostgreSQL/MySQL**: Use a relational database for structured data like blog posts, users, and comments.
+   - **MongoDB**: If you want to go the NoSQL route, MongoDB is great for storing blog posts and user data in a flexible, schema-less manner.
+   - Implement relationships (e.g., users and their blog posts, posts and their comments) using foreign keys (in relational DB) or references (in MongoDB).
 
 ### **Authentication**:
 
 1. **JWT (JSON Web Tokens)** or **OAuth**:
-    - Use JWT for stateless authentication, storing tokens in localStorage/sessionStorage or cookies.
-    - Alternatively, integrate with **OAuth** for social login (Google, GitHub, Facebook, etc.).
+   - Use JWT for stateless authentication, storing tokens in localStorage/sessionStorage or cookies.
+   - Alternatively, integrate with **OAuth** for social login (Google, GitHub, Facebook, etc.).
 
 ### **Cloud Storage for Media**:
 
 1. **AWS S3**, **Google Cloud Storage**, or **Cloudinary**:
-    - Use cloud services to store media files (e.g., images or avatars) associated with blog posts or user profiles.
-    - Ensure your app allows users to upload and display images in their blog posts.
+   - Use cloud services to store media files (e.g., images or avatars) associated with blog posts or user profiles.
+   - Ensure your app allows users to upload and display images in their blog posts.
 
 ### **Deployment**:
 
 1. **Docker**:
-    - Containerize your app with Docker for consistent development and deployment.
+   - Containerize your app with Docker for consistent development and deployment.
 2. **CI/CD Pipelines**:
-    - Set up CI/CD pipelines using **GitHub Actions**, **GitLab CI**, or **CircleCI** to automate tests, builds, and deployments.
+   - Set up CI/CD pipelines using **GitHub Actions**, **GitLab CI**, or **CircleCI** to automate tests, builds, and deployments.
 3. **Cloud Hosting**:
-    - Use **Heroku**, **AWS EC2**, **Google Cloud Run**, or **Azure** for deployment.
-    - Ensure you use a proper **domain** and set up **HTTPS** for secure communication.
+   - Use **Heroku**, **AWS EC2**, **Google Cloud Run**, or **Azure** for deployment.
+   - Ensure you use a proper **domain** and set up **HTTPS** for secure communication.
 
 ### Advanced Features to Make Your Blog App Stand Out:
 
 1. **Real-Time Features**:
-    - Use **WebSockets** or **Firebase Realtime Database** to allow real-time comments, notifications, or chat (for example, users can receive notifications when someone comments on their post).
+   - Use **WebSockets** or **Firebase Realtime Database** to allow real-time comments, notifications, or chat (for example, users can receive notifications when someone comments on their post).
 2. **Post Analytics**:
-    - Show analytics for blog posts (e.g., number of views, likes, or comments).
-    - Add an **admin dashboard** where admins can view statistics on the number of posts, user activity, etc.
+   - Show analytics for blog posts (e.g., number of views, likes, or comments).
+   - Add an **admin dashboard** where admins can view statistics on the number of posts, user activity, etc.
 3. **Content Moderation**:
-    - Implement a flagging system for inappropriate content.
-    - Allow admins to moderate content (approve or reject posts/comments).
+   - Implement a flagging system for inappropriate content.
+   - Allow admins to moderate content (approve or reject posts/comments).
 4. **SEO Optimization**:
-    - Optimize the application for SEO (using **Next.js** or **Nuxt.js** for server-side rendering can help).
-    - Generate meta tags, structured data (JSON-LD), and sitemaps to improve visibility on search engines.
+   - Optimize the application for SEO (using **Next.js** or **Nuxt.js** for server-side rendering can help).
+   - Generate meta tags, structured data (JSON-LD), and sitemaps to improve visibility on search engines.
 5. **Mobile App**:
-    - Convert your blog app into a **React Native** mobile app (or use **Flutter**) for cross-platform development, allowing users to write, read, and comment on posts via a mobile interface.
+   - Convert your blog app into a **React Native** mobile app (or use **Flutter**) for cross-platform development, allowing users to write, read, and comment on posts via a mobile interface.
 6. **Cache Optimization**:
-    - Use **Redis** for caching frequently requested blog posts or queries.
-    - Implement pagination or infinite scroll to handle large datasets efficiently.
+   - Use **Redis** for caching frequently requested blog posts or queries.
+   - Implement pagination or infinite scroll to handle large datasets efficiently.
 7. **Internationalization**:
-    - Make your app support multiple languages (if applicable) by using libraries like **i18next** for React or Vue.js.
+   - Make your app support multiple languages (if applicable) by using libraries like **i18next** for React or Vue.js.
 
 ### Potential Enhancements (Optional):
 
