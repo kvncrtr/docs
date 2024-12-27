@@ -1,3 +1,79 @@
+# MVP
+**General Idea:** Blog post advising businesses, music labels, and faith based people.
+
+“A faith perspective to Business and Music” 
+
+**Audience:** Business owners, Music executives, Faith leaders and followers.
+
+**Goal of Project:** To share a wealth of knowledge to those that want to seek help.
+
+**Deadlines:** February 28th, 2025
+
+**Stack:** 
+
+| Client Side | Server Side |
+| --- | --- |
+| React | Go |
+| Redux | PostgreSQL |
+| SCSS | Railway |
+
+**MVP features (Minimum Viable Product)**: 
+
+- show latest blog post
+- read blog post
+- sign in / out
+- show all blog post related to certain topics
+- in settings, view email subscriptions, subscribe and unsubscribe to certain classes
+
+**Admin**
+
+- login and out.
+- view all post
+- create post
+- update post
+- delete post
+- view post analytics
+- view full list of post classifications
+- view email list
+- remove emails from list
+- manage subscriptions
+- create email schedules for subscribers
+
+**Mood Board:** 
+
+```jsx
+
+/* Hex Cdes Here */
+White: #FFFFFF
+Black: #000000
+Purple500: #9B00F5
+Purple400: #A800FF
+Blue500: #00DCFF
+ 
+```
+
+**Sketches/UI~UX:** 
+
+https://www.techcrunch.com/
+
+**Back Log Items:**  
+
+1. ~~create schema for post.~~
+2. ~~create related table, constraints, and relations for post.~~
+3. ~~develop backend logic for post creation.~~
+4. ~~define api endpoints for post creation.~~
+5. develop backend logic for reading latest post.
+6. define api endpoints for reading latest post.
+7. develop the frontend for reading latest post.
+8. test the feature end-to-end.
+
+- create schema for
+- create relate tables, constraints, and relations
+- define endpoints for
+- define back end logic for
+- draw up the front end for
+- test the feature end-to-end.
+
 # What I Learned
 
 -I learned how to Normalize a table to cut down on redundancy and improve data integrity The process involves breaking down large tables into smaller ones and establishing relationships between them. I had a large table that defined blogpost but certain fields inside the table for example citations involved over 12 different fields. So I created smaller tables for all fields that needed to be normalized. Afterwards I assigned relations between the tables but some were classified as a many-to-many relationship. So I learned how to create Join Tables, I wanted to create a many-to-many relationship between citations and blog posts.
