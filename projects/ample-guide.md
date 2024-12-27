@@ -1,7 +1,8 @@
 # MVP
+
 **General Idea:** Blog post advising businesses, music labels, and faith based people.
 
-“A faith perspective to Business and Music” 
+“A faith perspective to Business and Music”
 
 **Audience:** Business owners, Music executives, Faith leaders and followers.
 
@@ -9,15 +10,16 @@
 
 **Deadlines:** February 28th, 2025
 
-**Stack:** 
+**Stack:**
 
 | Client Side | Server Side |
-| --- | --- |
-| React | Go |
-| Redux | PostgreSQL |
-| SCSS | Railway |
+| ----------- | ----------- |
+| React       | Go          |
+| Redux       | PostgreSQL  |
+| SCSS        | Railway     |
+|             | AWS S3      |
 
-**MVP features (Minimum Viable Product)**: 
+**MVP features (Minimum Viable Product)**:
 
 - show latest blog post
 - read blog post
@@ -39,7 +41,7 @@
 - manage subscriptions
 - create email schedules for subscribers
 
-**Mood Board:** 
+**Mood Board:**
 
 ```jsx
 
@@ -49,14 +51,14 @@ Black: #000000
 Purple500: #9B00F5
 Purple400: #A800FF
 Blue500: #00DCFF
- 
+
 ```
 
-**Sketches/UI~UX:** 
+**Sketches/UI~UX:**
 
 https://www.techcrunch.com/
 
-**Back Log Items:**  
+**Back Log Items:**
 
 1. ~~create schema for post.~~
 2. ~~create related table, constraints, and relations for post.~~
