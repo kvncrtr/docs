@@ -28,92 +28,92 @@ DevOps: Kubernetes (container orchestration), Docker (containerisation), ELK Sta
 [Blog Post Schema](https://schema.org/Blog)
 
 ```
- CREATE TABLE blog_posts (
-    -- Basic Information
-    id INT PRIMARY KEY,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    date_created DATE DEFAULT CURRENT_DATE,
-    date_modified DATE DEFAULT CURRENT_DATE,
-    date_published DATE DEFAULT CURRENT_DATE,
+CREATE TABLE blog_posts (
+   -- Basic Information
+   id INT PRIMARY KEY,
+   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   date_created DATE DEFAULT CURRENT_DATE,
+   date_modified DATE DEFAULT CURRENT_DATE,
+   date_published DATE DEFAULT CURRENT_DATE,
 
-    -- Content and Description
-    about TEXT NOT NULL,
-    abstract TEXT NOT NULL,
-    description TEXT NOT NULL,
-    content TEXT NOT NULL,
+   -- Content and Description
+   about TEXT NOT NULL,
+   abstract TEXT NOT NULL,
+   description TEXT NOT NULL,
+   content TEXT NOT NULL,
 
-    -- SEO and Metadata
-    issn VARCHAR(20) UNIQUE,
-    additional_type VARCHAR(255),
-    audience VARCHAR(100) NOT NULL DEFAULT 'general',
-    author VARCHAR(100) NOT NULL,
-    headline VARCHAR(255) NOT NULL,
-    alternative_headline VARCHAR(255) UNIQUE CHECK (LENGTH(alternative_headline) >= 5) DEFAULT 'no headline provided',
-    in_language VARCHAR(50) NOT NULL,
+   -- SEO and Metadata
+   issn VARCHAR(20) UNIQUE,
+   additional_type VARCHAR(255),
+   audience VARCHAR(100) NOT NULL DEFAULT 'general',
+   author VARCHAR(100) NOT NULL,
+   headline VARCHAR(255) NOT NULL,
+   alternative_headline VARCHAR(255) UNIQUE CHECK (LENGTH(alternative_headline) >= 5) DEFAULT 'no headline provided',
+   in_language VARCHAR(50) NOT NULL,
 
-    -- Legal and Copyright
-    copyright_holder VARCHAR(100) NOT NULL DEFAULT 'unknown',
-    copyright_notice TEXT NOT NULL DEFAULT 'unknown',
-    copyright_year INT NOT NULL DEFAULT 0,
-    country_of_origin VARCHAR(100) NOT NULL DEFAULT 'USA',
-    license VARCHAR(255) DEFAULT 'license unknown',
+   -- Legal and Copyright
+   copyright_holder VARCHAR(100) NOT NULL DEFAULT 'unknown',
+   copyright_notice TEXT NOT NULL DEFAULT 'unknown',
+   copyright_year INT NOT NULL DEFAULT 0,
+   country_of_origin VARCHAR(100) NOT NULL DEFAULT 'USA',
+   license VARCHAR(255) DEFAULT 'license unknown',
 
-    -- Content Rating and Access
-    content_rating mpaa_enum NOT NULL DEFAULT 'G',
-    conditions_of_access TEXT NOT NULL DEFAULT 'available to the general public',
-    is_accessible_for_free BOOLEAN DEFAULT TRUE,
-    is_family_friendly BOOLEAN DEFAULT TRUE,
+   -- Content Rating and Access
+   content_rating mpaa_enum NOT NULL DEFAULT 'G',
+   conditions_of_access TEXT NOT NULL DEFAULT 'available to the general public',
+   is_accessible_for_free BOOLEAN DEFAULT TRUE,
+   is_family_friendly BOOLEAN DEFAULT TRUE,
 
-    -- Audience and Educational Information
-    education_level learning_stage_enum NOT NULL DEFAULT 'adult',
-    educational_use VARCHAR(50) NOT NULL,
-    typical_age_range VARCHAR(50) NOT NULL DEFAULT '18+',
+   -- Audience and Educational Information
+   education_level learning_stage_enum NOT NULL DEFAULT 'adult',
+   educational_use VARCHAR(50) NOT NULL,
+   typical_age_range VARCHAR(50) NOT NULL DEFAULT '18+',
 
-    -- Publication Lifecycle
-    creative_work_status publication_lifecycle_enum NOT NULL DEFAULT 'draft',
-    expires DATE,
+   -- Publication Lifecycle
+   creative_work_status publication_lifecycle_enum NOT NULL DEFAULT 'draft',
+   expires DATE,
 
-    -- Attribution and Publishing
-    accountable_person VARCHAR(100) DEFAULT 'Kevin Maurice Carter Jr.',
-    editor VARCHAR(100) NOT NULL,
-    funder VARCHAR(100) DEFAULT 'self funded',
-    publisher VARCHAR(100) DEFAULT 'unknown',
+   -- Attribution and Publishing
+   accountable_person VARCHAR(100) DEFAULT 'Kevin Maurice Carter Jr.',
+   editor VARCHAR(100) NOT NULL,
+   funder VARCHAR(100) DEFAULT 'self funded',
+   publisher VARCHAR(100) DEFAULT 'unknown',
 
-    -- Location and Versioning
-    location_created VARCHAR(255) NOT NULL,
-    schema_version VARCHAR(10) DEFAULT '1.0.0',
-    version VARCHAR(10) NOT NULL DEFAULT '1.0.0',
+   -- Location and Versioning
+   location_created VARCHAR(255) NOT NULL,
+   schema_version VARCHAR(10) DEFAULT '1.0.0',
+   version VARCHAR(10) NOT NULL DEFAULT '1.0.0',
 
-    -- Miscellaneous Information
-    discussion_url VARCHAR(255),
-    interaction_statistic TEXT,
-    mentions TEXT,
-    offers TEXT,
-    sponsor VARCHAR(100) DEFAULT 'unsponsored',
-    teaches TEXT,
-    time_required VARCHAR(50),
+   -- Miscellaneous Information
+   discussion_url VARCHAR(255),
+   interaction_statistic TEXT,
+   mentions TEXT,
+   offers TEXT,
+   sponsor VARCHAR(100) DEFAULT 'unsponsored',
+   teaches TEXT,
+   time_required VARCHAR(50),
 
-    -- URL and Link Information
-    published_url VARCHAR(255),
-    admin_url VARCHAR(255),
+   -- URL and Link Information
+   published_url VARCHAR(255),
+   admin_url VARCHAR(255),
 
-    -- Organizational/Content Structure
-    has_part BOOLEAN DEFAULT FALSE,
-    is_part_of VARCHAR(100) DEFAULT 'standalone creative work',
-    position INT DEFAULT 0
+   -- Organizational/Content Structure
+   has_part BOOLEAN DEFAULT FALSE,
+   is_part_of VARCHAR(100) DEFAULT 'standalone creative work',
+   position INT DEFAULT 0
 );
 
 // ENUMS
 CREATE TYPE educational_use_enum AS ENUM (
-	  'general',
-	  'curriculum',
-	  'self-study',
-    'research',
-    'training',
-    'classroom_use',
-    'e_learning',
-    'workshops'
+   'general',
+   'curriculum',
+   'self-study',
+   'research',
+   'training',
+   'classroom_use',
+   'e_learning',
+   'workshops'
 );
 
 CREATE TYPE mpaa_enum AS ENUM (
@@ -157,130 +157,130 @@ CREATE TABLE IF NOT EXISTS Aggregated_Ratings (
 
 
 CREATE TABLE IF NOT EXISTS Citations (
-    id INT PRIMARY KEY,
-	  author VARCHAR(100) NOT NULL,
-    blog_post_id INT,
-    citation VARCHAR(1000) NOT NULL,
-    citation_type VARCHAR(50) NOT NULL,
-	  comments VARCHAR(1000),
-    date_published DATE NOT NULL,
-    headline VARCHAR(500),
-	  license VARCHAR(100) DEFAULT 'Not Found',
-	  name VARCHAR(100),
-    publisher VARCHAR(100) NOT NULL DEFAULT 'Unpublished',
-    url VARCHAR(255) DEFAULT 'Not Published',
-    FOREIGN KEY (blog_posts_id) REFERENCES Blog_Posts(id)
+   id INT PRIMARY KEY,
+   author VARCHAR(100) NOT NULL,
+   blog_post_id INT,
+   citation VARCHAR(1000) NOT NULL,
+   citation_type VARCHAR(50) NOT NULL,
+   comments VARCHAR(1000),
+   date_published DATE NOT NULL,
+   headline VARCHAR(500),
+   license VARCHAR(100) DEFAULT 'Not Found',
+   name VARCHAR(100),
+   publisher VARCHAR(100) NOT NULL DEFAULT 'Unpublished',
+   url VARCHAR(255) DEFAULT 'Not Published',
+   FOREIGN KEY (blog_posts_id) REFERENCES Blog_Posts(id)
 );
 
 CREATE TABLE IF NOT EXISTS keywords (
-    id INT PRIMARY KEY,
-    keyword VARCHAR(255) NOT NULL UNIQUE
-    description TEXT
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    is_active BOOLEAN
+   id INT PRIMARY KEY,
+   keyword VARCHAR(255) NOT NULL UNIQUE
+   description TEXT
+   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+   is_active BOOLEAN
 );
 
 CREATE TABLE IF NOT EXISTS blog_post_keywords (
-    blog_post_id INT,
-    keyword_id INT,
-    FOREIGN KEY (blog_post_id) REFERENCES blog_posts(id) ON DELETE CASCADE,
-    FOREIGN KEY (keyword_id) REFERENCES keywords(id) ON DELETE CASCADE
+   blog_post_id INT,
+   keyword_id INT,
+   FOREIGN KEY (blog_post_id) REFERENCES blog_posts(id) ON DELETE CASCADE,
+   FOREIGN KEY (keyword_id) REFERENCES keywords(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS comments (
-    id INT PRIMARY KEY,
-    blog_post_id INT,
-    commenter_name VARCHAR(100) DEFAULT 'Guest',
-    comment TEXT NOT NULL,
-    date_created DATE DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (blog_post_id) REFERENCES blog_posts(id)
+   id INT PRIMARY KEY,
+   blog_post_id INT,
+   commenter_name VARCHAR(100) DEFAULT 'Guest',
+   comment TEXT NOT NULL,
+   date_created DATE DEFAULT CURRENT_TIMESTAMP,
+   FOREIGN KEY (blog_post_id) REFERENCES blog_posts(id)
 );
 
 CREATE TABLE IF NOT EXISTS Contributors (
-    id INT PRIMARY KEY,
-	  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	  articles_written INT DEFAULT 0,
-    bio TEXT UNIQUE NOT NULL,
-    email VARCHAR(150) UNIQUE NOT NULL,
-		is_active BOOLEAN DEFAULT TRUE,
-		last_login TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-		name VARCHAR(100) NOT NULL,
-		password VARCHAR(255) UNIQUE NOT NULL,
-		profile_picture_url VARCHAR(255),
-		role VARCHAR(100) NOT NULL DEFAULT 'editor',
-		website_url VARCHAR(255)
+   id INT PRIMARY KEY,
+   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   articles_written INT DEFAULT 0,
+   bio TEXT UNIQUE NOT NULL,
+   email VARCHAR(150) UNIQUE NOT NULL,
+   is_active BOOLEAN DEFAULT TRUE,
+   last_login TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   name VARCHAR(100) NOT NULL,
+   password VARCHAR(255) UNIQUE NOT NULL,
+   profile_picture_url VARCHAR(255),
+   role VARCHAR(100) NOT NULL DEFAULT 'editor',
+   website_url VARCHAR(255)
 );
 
 
 CREATE TABLE IF NOT EXISTS blog_post_contributors (
-    blog_post_id INT,
-    contributor_id INT,
-		PRIMARY KEY (blog_post_id, contributor_id),
-    FOREIGN KEY (blog_post_id) REFERENCES blog_posts(id),
-    FOREIGN KEY (contributor_id) REFERENCES contributors(id)
+   blog_post_id INT,
+   contributor_id INT,
+   PRIMARY KEY (blog_post_id, contributor_id),
+   FOREIGN KEY (blog_post_id) REFERENCES blog_posts(id),
+   FOREIGN KEY (contributor_id) REFERENCES contributors(id)
 );
 
 CREATE TABLE IF NOT EXISTS videos (
-    id INT PRIMARY KEY,
-    author VARCHAR(100),
-    blog_post_id INT,
-    description TEXT NOT NULL,
-    duration INT NOT NULL,
-    is_public BOOLEAN DEFAULT FALSE,
-    last_modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    tags TEXT,
-    thumbnail_url VARCHAR(255),
-    title VARCHAR(255) NOT NULL UNIQUE,
-    video_format VARCHAR(50) NOT NULL,
-    video_quality VARCHAR(50),
-    video_size DECIMAL(10, 2),
-    video_url VARCHAR(255),
-    view_count INT DEFAULT 0,
-    uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (blog_post_id) REFERENCES blog_posts(id)
+   id INT PRIMARY KEY,
+   author VARCHAR(100),
+   blog_post_id INT,
+   description TEXT NOT NULL,
+   duration INT NOT NULL,
+   is_public BOOLEAN DEFAULT FALSE,
+   last_modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   tags TEXT,
+   thumbnail_url VARCHAR(255),
+   title VARCHAR(255) NOT NULL UNIQUE,
+   video_format VARCHAR(50) NOT NULL,
+   video_quality VARCHAR(50),
+   video_size DECIMAL(10, 2),
+   video_url VARCHAR(255),
+   view_count INT DEFAULT 0,
+   uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   FOREIGN KEY (blog_post_id) REFERENCES blog_posts(id)
 );
 
 CREATE TABLE IF NOT EXISTS thumbnails (
-    id INT PRIMARY KEY,
-    blog_post_id INT UNIQUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    file_size DECIMAL(10, 2),
-    format VARCHAR(50),
-    is_active BOOLEAN DEFAULT TRUE,
-    thumbnail_alt_text VARCHAR(255) DEFAULT 'Image',
-    thumbnail_height INT,
-    thumbnail_url VARCHAR(255),
-    thumbnail_width INT,
-    FOREIGN KEY (blog_post_id) REFERENCES blog_posts(id)
+   id INT PRIMARY KEY,
+   blog_post_id INT UNIQUE,
+   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   file_size DECIMAL(10, 2),
+   format VARCHAR(50),
+   is_active BOOLEAN DEFAULT TRUE,
+   thumbnail_alt_text VARCHAR(255) DEFAULT 'Image',
+   thumbnail_height INT,
+   thumbnail_url VARCHAR(255),
+   thumbnail_width INT,
+   FOREIGN KEY (blog_post_id) REFERENCES blog_posts(id)
 );
 
 CREATE TABLE IF NOT EXISTS media (
-    id INT PRIMARY KEY,
-    blog_post_id INT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    alt_text VARCHAR(255) NOT NULL,
-    captions_url VARCHAR(255) DEFAULT 'N/A',
-    content_rating VARCHAR(50) NOT NULL DEFAULT 'E',
-    date_created DATE NOT NULL,
-    description TEXT NOT NULL,
-		duration VARCHAR(50) NULL,
-    encoding_format VARCHAR(50) NOT NULL,
-    interaction_type VARCHAR(50) DEFAULT 'Static',
-    in_language VARCHAR(50) NOT NULL DEFAULT 'English',
-    license VARCHAR(100) NOT NULL,
-    media_type VARCHAR(50) NOT NULL,
-    mentions TEXT,
-    model_format VARCHAR(50) NULL DEFAULT '2D',
-    resolution VARCHAR(20) NULL,
-    size DECIMAL(10, 2) NULL,
-    thumbnail_url VARCHAR(255),
-    url VARCHAR(255) NOT NULL,
-    view_type VARCHAR(50),
-    FOREIGN KEY (blog_post_id) REFERENCES blog_posts(id) ON DELETE CASCADE
+   id INT PRIMARY KEY,
+   blog_post_id INT NOT NULL,
+   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   alt_text VARCHAR(255) NOT NULL,
+   captions_url VARCHAR(255) DEFAULT 'N/A',
+   content_rating VARCHAR(50) NOT NULL DEFAULT 'E',
+   date_created DATE NOT NULL,
+   description TEXT NOT NULL,
+   duration VARCHAR(50) NULL,
+   encoding_format VARCHAR(50) NOT NULL,
+   interaction_type VARCHAR(50) DEFAULT 'Static',
+   in_language VARCHAR(50) NOT NULL DEFAULT 'English',
+   license VARCHAR(100) NOT NULL,
+   media_type VARCHAR(50) NOT NULL,
+   mentions TEXT,
+   model_format VARCHAR(50) NULL DEFAULT '2D',
+   resolution VARCHAR(20) NULL,
+   size DECIMAL(10, 2) NULL,
+   thumbnail_url VARCHAR(255),
+   url VARCHAR(255) NOT NULL,
+   view_type VARCHAR(50),
+   FOREIGN KEY (blog_post_id) REFERENCES blog_posts(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS potential_actions (
@@ -516,9 +516,6 @@ Would you like further insights into a specific role or how these teams collabor
 7. workshops
 
 -size is reference to the size of the markup/html file.
-
-[Add more features to make it attractive to Google](https://www.notion.so/Add-more-features-to-make-it-attractive-to-Google-15ba8a10a70d8076881ce73b64497059?pvs=21)
-
 -connecting to a postgresql database
 
 [Connecting to a PostgreSQL database with Go's database/sql package - Calhoun.io](https://www.calhoun.io/connecting-to-a-postgresql-database-with-gos-database-sql-package/)
