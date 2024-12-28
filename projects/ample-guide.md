@@ -29,7 +29,7 @@
 
 **Admin**
 
-- login and out.
+- login and out
 - view all post
 - create post
 - update post
@@ -40,6 +40,14 @@
 - remove emails from list
 - manage subscriptions
 - create email schedules for subscribers
+
+**Repository:**
+
+GitHub Front End: [Link](https://github.com/kvncrtr/ample-guide-front-end)
+
+GitHub Back End: [Link]()
+
+AWS Bucket: [Link](https://us-east-1.console.aws.amazon.com/s3/buckets/ample-guide-img?bucketType=general&region=us-east-1&tab=objects#)
 
 **Mood Board:**
 
@@ -224,7 +232,7 @@ CREATE TYPE learning_stage_enum AS ENUM (
 	'adult'
 );
 
-CREATE TABLE IF NOT EXISTS Aggregated_Ratings (
+CREATE TABLE IF NOT EXISTS aggregated_ratings (
 	id INT PRIMARY KEY,
 	blog_post_id INT NOT NULL,
 	rating_value DECIMAL(3, 2) NOT NULL DEFAULT 0.00,
@@ -234,7 +242,7 @@ CREATE TABLE IF NOT EXISTS Aggregated_Ratings (
 );
 
 
-CREATE TABLE IF NOT EXISTS Citations (
+CREATE TABLE IF NOT EXISTS citations (
    id INT PRIMARY KEY,
    author VARCHAR(100) NOT NULL,
    blog_post_id INT,
@@ -275,7 +283,7 @@ CREATE TABLE IF NOT EXISTS comments (
    FOREIGN KEY (blog_post_id) REFERENCES blog_posts(id)
 );
 
-CREATE TABLE IF NOT EXISTS Contributors (
+CREATE TABLE IF NOT EXISTS contributors (
    id INT PRIMARY KEY,
    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
