@@ -19,7 +19,7 @@
 | SCSS        | Railway     |
 |             | AWS S3      |
 
-**MVP features (Minimum Viable Product)**:
+**MVP features (Minimum Viable Product):**
 
 - show latest blog post
 - read blog post
