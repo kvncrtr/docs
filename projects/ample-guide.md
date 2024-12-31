@@ -72,10 +72,11 @@ https://www.techcrunch.com/
 2. ~~create related table, constraints, and relations for post.~~
 3. ~~develop backend logic for post creation.~~
 4. ~~define api endpoints for post creation.~~
-5. develop backend logic for reading latest post.
-6. define api endpoints for reading latest post.
-7. develop the frontend for reading latest post.
-8. test the feature end-to-end.
+5. ~~develop backend logic for reading latest post.~~
+6. ~~define api endpoints for reading latest post.~~
+7. ~~develop the frontend for reading latest post.~~
+8. ~~test the feature end-to-end.~~
+9. 
 
 - create schema for
 - create relate tables, constraints, and relations
