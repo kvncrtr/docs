@@ -607,7 +607,7 @@ Would you like further insights into a specific role or how these teams collabor
 
 [Connecting to a PostgreSQL database with Go's database/sql package - Calhoun.io](https://www.calhoun.io/connecting-to-a-postgresql-database-with-gos-database-sql-package/)
 
-**MAKE THE BLOG POST MORE ATTRACTIVE TO GOOGLE**
+## **MAKE THE BLOG POST MORE ATTRACTIVE TO GOOGLE**
 
 A **Blog Full-Stack Application** is an excellent project idea that can demonstrate both basic and advanced web development skills while also being something manageable to build and scale. Here’s how you can design and implement a blog application to showcase your full-stack abilities for landing a job at top tech companies like Google or Microsoft:
 
