@@ -3,7 +3,7 @@
 
 Hey [name],
 
-I saw that [**Company**] was hiring engineers on [Job Posting] and wanted to reach out. I deeply admire how you're [**statement from their bio, give a common interest, company award mention, media significance, mission, vision, core value**]. This reminds me of the quote: [**insert relatable quote**] I would love to learn more about [**Company**] and explore [**relate back to the common interest statement showing interest to work there**]. Would you have a few minutes next week to discuss open roles?
+I saw that [**Company**] was hiring engineers on [Job Posting] and wanted to reach out. I deeply admire how you're [**statement from their bio, give a common interest, company award mention, media significance, mission, vision, core value**]. This reminds me of the quote: [**insert relatable quote**] I would love to learn more about [**Company**] and explore [**relate back to the common interest statement showing interest to work there**]. Would you have a few minutes this week to discuss open roles?
 
 Wishing you a wonderful [**current time of week**]!
 Cheers,
@@ -65,3 +65,5 @@ Example 2
 *I believe these are both valid solutions.  [Feel free to add more so they can understand your thought process. For example:  In terms of performance and efficiency, I think they are pretty even as they both at their worst are 0(N) in terms of time complexity.] What do you think?*
 
 *Once again, thank you for your time today. I will be following with [point of contact to hear more about next steps].*
+
+
