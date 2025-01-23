@@ -165,7 +165,7 @@
 - track parent referrals
 
 # Parent Portal (Later)
-- create a ledger to display the the states contribution, tuition cost, parents co pay, and show the balance due/credit. toggle on what columns to show to parents publically.
+- create a ledger to display the the states +contribution, tuition cost, parents co pay, and show the balance due/credit. toggle on what columns to show to parents publically.
 - photo and video sharing with parents
 - online scheduling for parent-teacher conferences
 - parents have access to blogs, videos, and activities.
