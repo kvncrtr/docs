@@ -117,6 +117,49 @@ Example daily log template:
    - It's important to avoid fake contributions. Genuine activity is better for long-term skill development and credibility.
    - If you're using scheduling or automation, ensure the contributions reflect meaningful work, even if spread out for appearance.
 
+🧩 Include These 4 Key Elements
+
+Type of Change (prefix):
+
+feat: → new feature
+
+fix: → bug fix
+
+refactor: → code cleanup
+
+style: → UI, CSS, formatting
+
+docs: → README, comments
+
+chore: → dependency updates, configs
+
+test: → adding or improving tests
+
+→ Hiring managers love structured prefixes — it screams “team-ready.”
+
+Short, Action-Oriented Summary:
+One line that clearly tells what changed.
+
+✅ Good: feat: add parent enrollment form with field validation
+
+❌ Bad: update stuff
+
+The “Why” (Context):
+A short explanation of why this change was needed.
+
+Added form validation to prevent incomplete submissions and improve UX.
+
+
+→ Shows you understand business value, not just syntax.
+
+Impact or Result:
+Optional but powerful. Helps a reviewer (or hiring manager) instantly see value.
+
+Reduces load time on parent dashboard by 20%.
+
+
+→ If you can quantify improvement, that’s gold.
+
 
 ## **Headers**
 ```markdown
